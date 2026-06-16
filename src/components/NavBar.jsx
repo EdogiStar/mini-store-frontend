@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function NavBar() {
+function NavBar({cart}) {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +36,7 @@ function NavBar() {
               🛒
 
               <span className="absolute -top-2 -right-2 bg-black text-white text-xs px-2 rounded-full">
-                0
+                {cart.length}
               </span>
             </button>
           </div>

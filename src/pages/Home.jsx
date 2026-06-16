@@ -100,9 +100,7 @@ function Home() {
             title={product.title}
             price={product.price}
             image={product.image}
-            onAddToCart={() =>
-              console.log("Added", product.title)
-            }
+            onAddToCart={() => addToCart(product)}
           />
         ))}
 
