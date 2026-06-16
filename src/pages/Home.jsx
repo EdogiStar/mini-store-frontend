@@ -1,30 +1,46 @@
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
 
 function Home() {
-  const featuredProducts = [
-    {
-      id: 1,
-      title: "Classic Watch",
-      price: 120,
-      image:
-        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-      id: 2,
-      title: "Wireless Headphones",
-      price: 299,
-      image:
-        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-      id: 3,
-      title: "Vintage Camera",
-      price: 450,
-      image:
-        "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&q=80&w=800",
-    },
-  ]
+  
+  const [products, setProducts] = useState([]);
+  
+  const [loading, setLoading] = useState(true);
+  
+  const [error, setError] = useState("");
+  
+  useEffect(() => {
+      fetch("https://fakestoreapi.com/products?limit=5")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch products")
+        }
+
+        return response.json()
+      })
+
+      .then((data) => {
+        setProducts(data)
+      })
+
+      .catch((err) => {
+        setError(err.message)
+      })
+
+      .finally(() => {
+        setLoading(false)
+      })
+  }, [])
+  
+  if (loading) {
+    return <h2>Loading products...</h2>
+  }
+
+  if (error) {
+    return <h2>{error}</h2>
+  }
+  
 
   return (
   <div className="min-h-screen">
