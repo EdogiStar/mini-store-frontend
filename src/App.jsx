@@ -21,7 +21,11 @@ function addToCart(product) {
 }
 
   return (
+     
     <>
+    <div style={{ position: "fixed", bottom: 0, background: "yellow", padding: 10 }}>
+  CART DEBUG: {cart.length}
+</div>
     <ScrollToTop />
       <NavBar cart={cart}/>
 <p>Items in cart: {cart.length}</p>
