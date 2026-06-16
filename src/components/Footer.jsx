@@ -11,7 +11,7 @@ function Footer() {
               MiniStore
             </span>
             <p className="text-sm text-gray-500">
-              © 2024 MiniStore. Built for beginners.
+              © 2026 MiniStore.
             </p>
           </div>
 
