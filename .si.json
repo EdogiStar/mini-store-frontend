@@ -17,6 +17,14 @@
     ".md": {
       "enabled": true,
       "run": "marksman server"
+    },
+    ".js": {
+      "enabled": true,
+      "run": "typescript-language-server --stdio"
+    },
+    ".css": {
+      "enabled": true,
+      "run": "vscode-css-language-server --stdio"
     }
   }
 }
