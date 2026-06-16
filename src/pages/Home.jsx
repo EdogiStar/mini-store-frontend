@@ -94,7 +94,7 @@ function Home() {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-        {featuredProducts.map((product) => (
+        {products.map((product) => (
           <ProductCard
             key={product.id}
             title={product.title}
