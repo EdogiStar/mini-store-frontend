@@ -9,7 +9,9 @@ import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 
 
-const [cart, setCart] = useState([])
+function App() {
+    
+    const [cart, setCart] = useState([])
 
 function addToCart(product) {
   setCart((currentCart) => [
@@ -18,12 +20,11 @@ function addToCart(product) {
   ])
 }
 
-function App() {
   return (
     <>
     <ScrollToTop />
       <NavBar cart={cart}/>
-
+<p>Items in cart: {cart.length}</p>
       <Routes>
         <Route path="/" element={<Home addToCart={addToCart}/>} />
         <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
