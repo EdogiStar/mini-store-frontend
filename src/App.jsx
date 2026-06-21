@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 import Home from "./pages/Home"
@@ -110,7 +110,7 @@ const cartCount = cart.reduce( (total, item) => total + item.quantity, 0)
      
     <>
       <ScrollToTop />
-      <NavBar cart={cartCount}/>
+      <NavBar cartCount={cartCount}/>
       
       <Routes>
         <Route path="/" element={<Home addToCart={addToCart}/>} />

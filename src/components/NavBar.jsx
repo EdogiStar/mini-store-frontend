@@ -38,16 +38,26 @@ function NavBar({cartCount}) {
             </div>
           </div>
 
-          {/* Cart */}
-          <div className="flex items-center">
-            <button className="relative p-2">
-              🛒
+{/* Cart */}
 
-              <span className="absolute -top-2 -right-2 bg-black text-white text-xs px-2 rounded-full">
-                {cartCount}
-              </span>
-            </button>
-          </div>
+<div className="flex items-center">
+
+  <Link
+    to="/cart"
+    className="relative p-2"
+  >
+
+    🛒
+
+    <span className="absolute -top-2 -right-2 bg-black text-white text-xs px-2 rounded-full">
+
+      {cartCount}
+
+    </span>
+
+  </Link>
+
+</div>
 
         </div>
       </div>
