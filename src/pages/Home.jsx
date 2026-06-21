@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import WhyChooseUs from "../components/WhyChooseUs"
 import Testimonials from "../components/Testimonials"
-import Newsletter from "../components/Newsletter"
+import NewsLetter from "../components/NewsLetter"
 import ProductCard from "../components/ProductCard"
 
 function Home({addToCart}) {
@@ -123,7 +123,7 @@ function Home({addToCart}) {
     
    <WhyChooseUs />
    <Testimonials />
-   <Newsletter />
+   <NewsLetter />
 
   </div>
 )
