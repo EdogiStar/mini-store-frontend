@@ -125,6 +125,11 @@ Grand Total:
 ${total}
 
 </h2>
+<Link to="/checkout" className="inline-block mt-6 bg-black text-white px-8 py-3 rounded">
+
+Proceed to Checkout
+
+</Link>
 
 </div>
 

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import Home from "./pages/Home"
 import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
+import Checkout from "./pages/Checkout"
+import Success from "./pages/Success"
 
 import ScrollToTop from "./components/ScrollToTop"
 import NavBar from "./components/NavBar"
@@ -41,13 +43,13 @@ function addToCart(product) {
   })
 }
 
+function clearCart() {
+    setCart([])
+    localStorage.removeItem('cart')
+}
+
 function increaseQuantity(id) {
-
-setCart((currentCart) =>
-
-currentCart.map((item) =>
-
-item._id === id
+    setCart((currentCart) => currentCart.map((item) => item._id === id
 ? {
 ...item,
 quantity: item.quantity + 1
@@ -116,6 +118,8 @@ const cartCount = cart.reduce( (total, item) => total + item.quantity, 0)
         <Route path="/" element={<Home addToCart={addToCart}/>} />
         <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
         <Route path="/cart" element={<Cart cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeItem={removeItem}/>}/>
+        <Route path="/checkout" element={<Checkout cart={cart} clearCart={clearCart}/>}/>
+        <Route path="/success" element={<Success/>}/>
       </Routes>
 
       <Footer />
