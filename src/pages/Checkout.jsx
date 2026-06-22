@@ -38,12 +38,14 @@ async function handleSubmit(e) {e.preventDefault()
                 body: JSON.stringify(order)
         })
         if (!response.ok) {
-            throw new Error('Order failed')
+            const error = await response.text()
+            alert(error)
+            return
         }
         clearCart()
         navigate('/success')
     }catch (error) {
-        alert('Failed to place order')
+        alert( error.message )
     }
    }
 
